@@ -18,8 +18,8 @@ public class Controller {
 
     @GetMapping("/{id}")
     public ResponseEntity<Test> getTest(@PathVariable Long id){
-        Test test =
-        return
+        Test test = repo.getTestById(id);
+        return ResponseEntity.ok(test);
 
     }
 
