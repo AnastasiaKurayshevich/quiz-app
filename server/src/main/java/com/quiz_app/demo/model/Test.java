@@ -18,6 +18,10 @@ public class Test {
         this.testMessage = testMessage;
     }
 
+    public Test() {
+
+    }
+
     public long getId() {
         return id;
     }

@@ -1,13 +1,11 @@
 package com.quiz_app.demo.model;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/test")
+@CrossOrigin(origins = "http://127.0.0.1:5173/", allowedHeaders = "*")
 public class Controller {
 
     Repository repo;
