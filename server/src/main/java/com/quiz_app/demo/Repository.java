@@ -8,4 +8,8 @@ public class Repository  {
     public Repository(JpaRepository repository) {
         this.repository = repository;
     }
+
+    public Test getTestById(long id){
+        return (Test) repository.findById(id).orElse(null);
+    }
 }
