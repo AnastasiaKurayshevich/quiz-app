@@ -1,0 +1,1 @@
+INSERT INTO test(test_message) VALUES ("Hello, this is test");
