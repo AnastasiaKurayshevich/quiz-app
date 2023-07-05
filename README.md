@@ -11,11 +11,23 @@ The game will be one-page application that changes the dispaly state of componen
 
 ### Technical specification:
 
-Database container: Docker  
-Database: PostgreSQL  
-Backend: Java Spring (Dependencies: Spring WEB, Spring Data JPA, Spring Boot DevTools, H2 Database, PostgreSQL Driver)  
-Frontend: Vite and React, TypeScript  
-Documentation: OpenAPI  
+- Database container: Docker  
+- Database: PostgreSQL  
+- Backend: Java Spring (Dependencies: Spring WEB, Spring Data JPA, Spring Boot DevTools, H2 Database, PostgreSQL Driver)  
+- Frontend: Vite and React, TypeScript  
+- Documentation: OpenAPI
+
+### Project goals: 
+
+Create a minimal functionality where User can start the game, recieve the question with answers, interact with the game by answering the questions, and recieve the final score of how many questions were answered correctly.
+
+### Possible extra features (to be implemented in the future):
+
+- Prevent dublicating the questions
+- Create a database with names and scores of Users (post results to the database)
+- Add categories to the questions, filter them according to their category
+- Add time restrictions for answering the questions
+- Include unused time in score calculation process 
 
 
 ### Initial design wireframe: 
@@ -42,6 +54,7 @@ Please ignore the style and colors of the design, I created this wireframe to na
 
 1. User is presented with final score and score calculations.
 2. User's score is posted to the server, and list of 5 highest scores is presented (fetched from the server).
+
 
 ### Game rules: 
 
