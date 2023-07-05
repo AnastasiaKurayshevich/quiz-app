@@ -11,9 +11,13 @@ The game will be one-page application that changes the dispaly state of componen
 
 ### Technical specification:
 Database container: Docker
+ 
 Database: PostgreSQL
+
 Backend: Java Spring (Dependencies: Spring WEB, Spring Data JPA, Spring Boot DevTools, H2 Database, PostgreSQL Driver) 
+
 Frontend: Vite and React, TypeScript
+
 Documentation: OpenAPI
 
 
