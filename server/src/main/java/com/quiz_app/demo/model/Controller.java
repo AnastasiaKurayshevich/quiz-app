@@ -16,9 +16,10 @@ public class Controller {
         this.repo = repo;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     public ResponseEntity<Test> getTest(@PathVariable Long id){
         Test test = repo.getTestById(id);
+
         return ResponseEntity.ok(test);
 
     }

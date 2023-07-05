@@ -12,4 +12,25 @@ public class Test {
     private long id;
 
     private String testMessage;
+
+    public Test(long id, String testMessage) {
+        this.id = id;
+        this.testMessage = testMessage;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getTestMessage() {
+        return testMessage;
+    }
+
+    public void setTestMessage(String testMessage) {
+        this.testMessage = testMessage;
+    }
 }
