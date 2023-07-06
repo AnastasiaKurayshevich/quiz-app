@@ -20,7 +20,7 @@ export const QuestionCard = () => {
     useEffect(() => {
         const fetchQuestions = async () => {
           try {
-            const response = await fetch('/api/quiz/questions');
+            const response = await fetch('http://localhost:3000/api/question/random');
             const data = await response.json();
             setQuestion(data);
           
