@@ -26,6 +26,11 @@ export const QuestionCard = () => {
     }, []);
 
     const handleAnswerSelect = (answerId: number) => {
+        const currentQuestion = questions[currentQuestionIndex];
+        const selectedAnswer = currentQuestion.answers.find((answer) => answer.id === answerId);
+        if (selectedAnswer && selectedAnswer.correct){
+            setScore((prevScore) => prevScore + 1);
+        }
         setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
     }
 
@@ -49,6 +54,7 @@ export const QuestionCard = () => {
         :
         ( <ResultPage/>)
 }
+    <p>Score:{score}/5</p>
     </div>
   )
 }

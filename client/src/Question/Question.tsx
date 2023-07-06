@@ -18,7 +18,7 @@ export const Question = (props: QuestionCardProp) => {
     useEffect(() => {
         const waitWithAnswers = setTimeout(() => {
             setShowAnswer(true);
-        }, 5000);
+        }, 3000);
 
         const showOnClick = () => {
             setShowAnswer(true);
