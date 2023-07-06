@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { QuestionProp } from './type/QuestionProp'
+import { AnswerProp } from './type/AnswerProp';
 
 
 export const Question = (props: QuestionProp) => {
@@ -29,12 +30,28 @@ export const Question = (props: QuestionProp) => {
     const handleAnswerSelect = (answerId: number) => {
         setSelectedAnswer(answerId);
       };
+
+      const getAnswerClass = (answer: AnswerProp) => {
+        if (selectedAnswer !== null){
+            if (answer.id === selectedAnswer && answer.correct){
+                return 'correct';
+            }else if (answer.id === selectedAnswer && !answer.correct){
+                return 'incorrect';
+            } else if (answer.correct){
+                return 'correct-answer';
+            }
+        }
+        return '';
+
+      }
   return (
     <>
     <p>{props.question}</p>
     {showAnswers && (<ul>{props.answers.map(answer => 
     <li key={answer.id}>
-        <button onClick={() => handleAnswerSelect(answer.id)}>{answer.answer}</button>
+        <button 
+        
+        onClick={() => handleAnswerSelect(answer.id)}>{answer.answer}</button>
         </li>)}</ul>)}
     {selectedAnswer !== null && (<p>
               {props.answers.find((answer) => answer.id === selectedAnswer)
