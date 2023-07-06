@@ -13,6 +13,10 @@ public class QuestionService {
         this.repo = repo;
     }
 
+    public Question getRandomQuestion(){
+
+    }
+
     public Question getById(long id){
         return repo.getQuestionById(id);
     }
