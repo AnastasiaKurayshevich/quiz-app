@@ -2,6 +2,7 @@ package com.quiz_app.demo.model;
 
 import com.quiz_app.demo.model.question.Question;
 import com.quiz_app.demo.model.question.QuestionRepository;
+import com.quiz_app.demo.model.result.Result;
 import com.quiz_app.demo.model.result.ResultRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,6 +44,10 @@ public class QuizService {
         int randomNumber = random.nextInt(maxNumber) + 1;
       return repo.getQuestionById(randomNumber);
 
+    }
+
+    private void saveResultToDataBase(Result result){
+        resultRepo.safeToDb(result);
     }
 
 
