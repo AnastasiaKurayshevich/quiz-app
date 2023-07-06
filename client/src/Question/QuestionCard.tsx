@@ -12,7 +12,6 @@ export const QuestionCard = () => {
             const response = await fetch('http://localhost:3000/api/question/random');
             const data = await response.json();
             setQuestions(data);
-            setCurrentQuestionIndex(0);
           } catch (error) {
             console.error('Error fetching questions:', error);
           }
@@ -22,12 +21,21 @@ export const QuestionCard = () => {
 
     }, []);
 
-    const currentQuestion = questions[currentQuestionIndex];
+    const handleAnswerSelect = (answerId: number) => {
+        setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+    }
+
+
     
   return (
     <div>
         <h4>Here is test question:</h4>
-        {currentQuestion && <Question {...currentQuestion}/>}
+        {questions.length > 0 && ( 
+        <Question 
+        question={questions[currentQuestionIndex]}
+        onAnswerSelect={handleAnswerSelect}
+        hasNextQuestion={currentQuestionIndex < questions.length - 1}
+        />)}
     </div>
   )
 }

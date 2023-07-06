@@ -29,6 +29,12 @@ export const Question = (props: QuestionProp) => {
 
     const handleAnswerSelect = (answerId: number) => {
         setSelectedAnswer(answerId);
+
+        setTimeout(() => {
+            setSelectedAnswer(null);
+            setShowAnswer(false);
+        
+        }, 2000);
       };
 
       const getAnswerClass = (answer: AnswerProp) => {
