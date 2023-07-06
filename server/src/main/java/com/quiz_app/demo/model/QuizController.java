@@ -34,5 +34,12 @@ public class QuizController {
         return ResponseEntity.accepted().build();
     }
 
+    @GetMapping("/results")
+    public ResponseEntity<List<Result>> getAllResults(){
+
+        return null;
+
+    }
+
 
 }
