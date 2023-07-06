@@ -3,16 +3,33 @@ package com.quiz_app.demo.model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Random;
+import java.util.*;
 
 @Service
 public class QuestionService {
 
     private final QuestionRepository repo;
+    private final int LIST_SIZE = 5;
 
     @Autowired
     public QuestionService(QuestionRepository repo) {
         this.repo = repo;
+    }
+
+    public List<Question> getListOfRandomQuestions(){
+        List<Question> questionList = new ArrayList<>();
+        Set<Long> questionIdSet = new HashSet<>();
+
+        while (questionList.size() < LIST_SIZE) {
+            Question question = getRandomQuestion();
+
+
+            if (!questionIdSet.contains(question.getId())){
+                questionIdSet.add(question.getId());
+                questionList.add(question);
+            }
+        }
+        return questionList;
     }
 
     public Question getRandomQuestion(){
