@@ -1,17 +1,6 @@
 import React from 'react'
+import { QuestionProp } from './type/QuestionProp'
 
-type Answer = {
-    id: number;
-    question_id: number;
-    answer: string;
-    isCorrect: boolean; 
-  }
-  
-  type QuestionProp = {
-    id: number;
-    question: string;
-    answers: Answer[];
-  }
 
 export const Question = (props: QuestionProp) => {
   return (

@@ -1,21 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Question } from './Question';
-
-type Answer = {
-    id: number;
-    question_id: number;
-    answer: string;
-    isCorrect: boolean; 
-  }
-  
-  type Question = {
-    id: number;
-    question: string;
-    answers: Answer[];
-  }
+import { QuestionProp } from './type/QuestionProp';
   
 export const QuestionCard = () => {
-    const [currentQuestion, setQuestion] = useState<Question>();
+    const [currentQuestion, setQuestion] = useState<QuestionProp>();
 
     useEffect(() => {
         const fetchQuestions = async () => {
