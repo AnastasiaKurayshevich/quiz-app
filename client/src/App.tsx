@@ -1,5 +1,6 @@
 
 import './App.css'
+import { QuestionCard } from './Question/QuestionCard'
 import TestComponent from './TestComponent'
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
 
   return (
     <>
-    <TestComponent />
+    <QuestionCard  />
     </>
   )
 }
