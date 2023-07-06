@@ -44,6 +44,13 @@ export const QuestionCard = () => {
         setQuizCompleted(true);
     }
 
+    const handleGameStart = (name: string) => {
+        setPlayerName(name);
+        setCurrentQuestionIndex(0);
+        setScore(0);
+        setQuizCompleted(false);
+    }
+
 
     
   return (
