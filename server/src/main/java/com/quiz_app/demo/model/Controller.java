@@ -16,10 +16,10 @@ import java.util.List;
 @CrossOrigin(origins = "http://127.0.0.1:5173/", allowedHeaders = "*")
 public class Controller {
 
-    private final QuestionService service;
+    private final QuizService service;
 
     @Autowired
-    public Controller(QuestionService service) {
+    public Controller(QuizService service) {
         this.service = service;
     }
 

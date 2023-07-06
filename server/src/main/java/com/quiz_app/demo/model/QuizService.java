@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 
 @Service
-public class QuestionService {
+public class QuizService {
 
     private final QuestionRepository repo;
     private final int LIST_SIZE = 5;
 
     @Autowired
-    public QuestionService(QuestionRepository repo) {
+    public QuizService(QuestionRepository repo) {
         this.repo = repo;
     }
 
