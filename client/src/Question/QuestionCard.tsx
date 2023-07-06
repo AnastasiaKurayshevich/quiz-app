@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Question } from './Question';
 import { QuestionProp } from './type/QuestionProp';
   
