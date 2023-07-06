@@ -14,8 +14,7 @@ public class Question {
    @Column(nullable = false)
    private String question;
 
-   @OneToMany
-   @JoinColumn(name="answer_id")
+   @OneToMany(mappedBy = "question")
    private List<Answer> answers;
 
    public Question(long id, String question, List<Answer> answers) {
