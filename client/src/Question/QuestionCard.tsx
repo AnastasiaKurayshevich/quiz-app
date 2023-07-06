@@ -2,13 +2,17 @@ import { useEffect, useState } from 'react'
 import { Question } from './Question';
 import { QuestionProp } from './type/QuestionProp';
 import { ResultPage } from '../ExtraPages/ResultPage';
+
+type QuestionCardProp = {
+    playerName: string;
+}
   
-export const QuestionCard = () => {
+export const QuestionCard = (props: QuestionCardProp) => {
     const [questions, setQuestions] = useState<QuestionProp[]>([]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
     const [quizCompleted, setQuizCompleted] = useState(false);
     const [score, setScore] = useState<number>(0);
-    const [playerName, setPlayerName] = useState('');
+    // const [playerName, setPlayerName] = useState('');
 
     useEffect(() => {
         const fetchQuestions = async () => {
@@ -44,12 +48,12 @@ export const QuestionCard = () => {
         setQuizCompleted(true);
     }
 
-    const handleGameStart = (name: string) => {
-        setPlayerName(name);
-        setCurrentQuestionIndex(0);
-        setScore(0);
-        setQuizCompleted(false);
-    }
+    // const handleGameStart = (name: string) => {
+    //     setPlayerName(name);
+    //     setCurrentQuestionIndex(0);
+    //     setScore(0);
+    //     setQuizCompleted(false);
+    // }
 
 
     
@@ -68,7 +72,7 @@ export const QuestionCard = () => {
         </>
         )) 
         :
-        ( <ResultPage playerName={playerName} score={score}/>)
+        ( <ResultPage playerName={props.playerName} score={score}/>)
 }
     
     </div>

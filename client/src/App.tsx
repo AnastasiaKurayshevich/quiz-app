@@ -6,9 +6,11 @@ import { NameInputPage } from './ExtraPages/NameInputPage';
 
 function App() {
   const [gameStarted, setGameStarted] = useState(false); 
+  const [playerName, setPlayerName] = useState('');
 
-  const handleGameStart = () => {
+  const handleGameStart = (name: string) => {
     setGameStarted(true);
+    setPlayerName(name);
   }
   
 
@@ -17,7 +19,7 @@ function App() {
     {!gameStarted ? (
       <NameInputPage onStartGame={handleGameStart}/>
     ) : (
-    <QuestionCard  />
+    <QuestionCard  playerName = {playerName}/>
     )}
     </>
   )
