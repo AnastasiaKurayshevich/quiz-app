@@ -22,6 +22,7 @@ public class Controller {
     @GetMapping("/random")
     public ResponseEntity<Question> getRandomQuestion(){
         Question question = service.getById(1);
+
         return ResponseEntity.ok(question);
     }
 

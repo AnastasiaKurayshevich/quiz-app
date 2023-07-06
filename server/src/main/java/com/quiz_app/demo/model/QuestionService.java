@@ -3,6 +3,8 @@ package com.quiz_app.demo.model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Random;
+
 @Service
 public class QuestionService {
 
@@ -14,6 +16,11 @@ public class QuestionService {
     }
 
     public Question getRandomQuestion(){
+        int maxNumber = repo.findAllQuestions().size();
+        Random random = new Random();
+        long randomNumber = random.nextLong() % maxNumber + 1;
+
+      return repo.getQuestionById(randomNumber);
 
     }
 
