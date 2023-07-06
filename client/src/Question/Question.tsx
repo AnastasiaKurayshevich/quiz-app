@@ -10,12 +10,14 @@ export const Question = (props: QuestionProp) => {
             setShowAnswer(true);
         }, 5000);
 
+        return () => clearTimeout(waitWithAnswers);
+
     }, []);
   return (
     <>
     <p>{props.question}</p>
-    <ul>{props.answers.map(answer => 
-    <li key={answer.id}><button>{answer.answer}</button></li>)}</ul>
+    {showAnswers && (<ul>{props.answers.map(answer => 
+    <li key={answer.id}><button>{answer.answer}</button></li>)}</ul>)}
     </>
   )
 }
