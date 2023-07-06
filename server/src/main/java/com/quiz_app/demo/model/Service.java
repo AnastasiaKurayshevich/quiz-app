@@ -5,10 +5,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 @org.springframework.stereotype.Service
 public class Service {
 
-    QuestionRepository repo;
+    private final QuestionRepository repo;
 
     @Autowired
     public Service(QuestionRepository repo) {
         this.repo = repo;
+    }
+
+    public Question getById(long id){
+        return repo.getQuestionById(id);
     }
 }
