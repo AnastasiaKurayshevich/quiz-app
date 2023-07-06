@@ -16,7 +16,7 @@ type Answer = {
 export const QuestionCard = () => {
     const [question, setQuestion] = useState<Question>();
 
-   
+    useEffect(() => {
         const fetchQuestions = async () => {
           try {
             const response = await fetch('/api/quiz/questions');
@@ -29,6 +29,7 @@ export const QuestionCard = () => {
     
         fetchQuestions();
 
+    }, []);
 
     
   return (
