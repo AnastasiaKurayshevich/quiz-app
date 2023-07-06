@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { QuestionProp } from './type/QuestionProp'
 import { AnswerProp } from './type/AnswerProp';
 
-type QuestionCardProp = {
+type QuestionArrayProp = {
     question: QuestionProp;
     onAnswerSelect: (answerId: number) => void;
     hasNextQuestion: boolean;
@@ -12,7 +12,7 @@ type QuestionCardProp = {
 
 
 
-export const Question = (props: QuestionCardProp) => {
+export const Question = (props: QuestionArrayProp) => {
     const [showAnswers, setShowAnswer] = useState(false);
     const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null); 
 
