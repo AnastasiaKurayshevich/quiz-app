@@ -10,6 +10,10 @@ public class Answer {
     @Column(name="answer_id")
     private long id;
 
+    @ManyToOne
+    @JoinColumn(name="question_id")
+    private Question question;
+
     @Column(nullable = false)
     private String answer;
 
