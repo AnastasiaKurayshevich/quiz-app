@@ -2,12 +2,10 @@ package com.quiz_app.demo.model;
 
 import com.quiz_app.demo.model.question.Question;
 import com.quiz_app.demo.model.question.QuestionDTO;
+import com.quiz_app.demo.model.result.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,6 +26,12 @@ public class QuizController {
         List<Question> questionList = service.getListOfRandomQuestions();
         QuestionDTO response = new QuestionDTO(questionList);
         return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/save_result")
+    public ResponseEntity saveResult(@RequestBody Result result){
+        service.saveResultToDataBase(result);
+        return ResponseEntity.accepted().build();
     }
 
 

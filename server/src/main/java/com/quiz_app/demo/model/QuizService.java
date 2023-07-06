@@ -38,6 +38,10 @@ public class QuizService {
         return questionList;
     }
 
+    public void saveResultToDataBase(Result result){
+        resultRepo.safeToDb(result);
+    }
+
     private Question getRandomQuestion(){
         int maxNumber = repo.findAllQuestions().size();
         Random random = new Random();
@@ -46,9 +50,7 @@ public class QuizService {
 
     }
 
-    private void saveResultToDataBase(Result result){
-        resultRepo.safeToDb(result);
-    }
+
 
 
 }
