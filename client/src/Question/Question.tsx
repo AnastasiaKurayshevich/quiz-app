@@ -6,6 +6,7 @@ type QuestionCardProp = {
     question: QuestionProp;
     onAnswerSelect: (answerId: number) => void;
     hasNextQuestion: boolean;
+    onQuizCompletion: (completed: boolean) => void;
 }
 
 

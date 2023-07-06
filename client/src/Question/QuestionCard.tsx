@@ -41,6 +41,7 @@ export const QuestionCard = () => {
         question={questions[currentQuestionIndex]}
         onAnswerSelect={handleAnswerSelect}
         hasNextQuestion={currentQuestionIndex < questions.length - 1}
+        onQuizCompletion={handleQuizCompletion} 
         />
         )}
     </div>
