@@ -17,7 +17,7 @@ export const ResultPage = (props: ResultPageProps) => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ name: props.playerName, score: props.score + "/ 5"}),
+          body: JSON.stringify({ name: props.playerName, score: props.score}),
         });
 
         if (response.ok) {
