@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/question")
 @CrossOrigin(origins = "http://127.0.0.1:5173/", allowedHeaders = "*")
@@ -20,10 +22,10 @@ public class Controller {
     }
 
     @GetMapping("/random")
-    public ResponseEntity<Question> getRandomQuestionFromDb(){
-        Question question = service.getRandomQuestion();
+    public ResponseEntity<List<Question>> getRandomQuestionFromDb(){
+        List<Question> questionList = service.getListOfRandomQuestions();
 
-        return ResponseEntity.ok(question);
+        return ResponseEntity.ok(questionList);
     }
 
 
