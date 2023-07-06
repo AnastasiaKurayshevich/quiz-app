@@ -30,7 +30,6 @@ export const QuestionCard = () => {
     
   return (
     <div>
-        <h4>Here is test question:</h4>
         {questions.length > 0 && ( 
         <Question 
         question={questions[currentQuestionIndex]}

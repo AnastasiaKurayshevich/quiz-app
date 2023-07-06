@@ -43,7 +43,7 @@ export const Question = (props: QuestionCardProp) => {
         if (props.hasNextQuestion){
             props.onAnswerSelect(answerId);
         } else {
-            //end of quiz here? 
+            alert('Quiz completed!');
         }
         
         }, 2000);
