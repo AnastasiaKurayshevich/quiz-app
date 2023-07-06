@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Question } from './Question';
 import { QuestionProp } from './type/QuestionProp';
-import { ResultPage } from '../FinalPage/ResultPage';
+import { ResultPage } from '../ExtraPages/ResultPage';
   
 export const QuestionCard = () => {
     const [questions, setQuestions] = useState<QuestionProp[]>([]);
