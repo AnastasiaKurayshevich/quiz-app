@@ -1,12 +1,29 @@
 import React, { useEffect, useState } from 'react';
 
-const TestComponent: React.FC = () => {
+type Answer = {
+  id: number;
+  question_id: number;
+  answer: string;
+  isCorrect: boolean; 
+}
+
+type Question = {
+  id: number;
+  question: string;
+  answers: Answer[];
+}
+
+type Props  = {
+  question: Question;
+}
+
+const TestComponent: React.FC<> = () => {
   const [test, setTest] = useState<any>(null);
 
   useEffect(() => {
     const fetchTest = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/test/1');
+        const response = await fetch('http://localhost:3000/api/question/random');
         const data = await response.json();
         setTest(data);
       } catch (error) {
@@ -21,9 +38,11 @@ const TestComponent: React.FC = () => {
     <div>
       {test ? (
         <div>
-          <h1>Test Data</h1>
-          <p>ID: {test.id}</p>
-          <p>Test Message: {test.testMessage}</p>
+          <h1>Test Question Data</h1>
+          <p>Question: {test.question}</p>
+          <p>{test.answers.map(answer => (
+          <li key={answer.id}>{answer.answer}</li>
+          ))}</p>
         </div>
       ) : (
         <p>Loading test data...</p>
@@ -34,7 +53,7 @@ const TestComponent: React.FC = () => {
 
 export default TestComponent;
 
-//test success
+
 
 
 
