@@ -23,6 +23,3 @@ logging:
       springframework:
         boot:
           autoconfigure: ERROR
-springdoc:
-  swagger-ui:
-    path: /swagger-ui.html
