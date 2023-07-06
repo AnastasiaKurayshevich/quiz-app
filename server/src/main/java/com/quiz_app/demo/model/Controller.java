@@ -20,8 +20,8 @@ public class Controller {
     }
 
     @GetMapping("/random")
-    public ResponseEntity<Question> getRandomQuestion(){
-        Question question = service.getById(1);
+    public ResponseEntity<Question> getRandomQuestionFromDb(){
+        Question question = service.getRandomQuestion();
 
         return ResponseEntity.ok(question);
     }
