@@ -13,6 +13,7 @@ export const QuestionCard = (props: QuestionCardProp) => {
     const [quizCompleted, setQuizCompleted] = useState(false);
     const [score, setScore] = useState<number>(0);
 
+
     useEffect(() => {
         const fetchQuestions = async () => {
           try {
@@ -28,6 +29,7 @@ export const QuestionCard = (props: QuestionCardProp) => {
         fetchQuestions();
 
     }, []);
+
 
     const handleAnswerSelect = (answerId: number) => {
         const currentQuestion = questions[currentQuestionIndex];
