@@ -25,6 +25,10 @@ export const Question = (props: QuestionProp) => {
 
 
     }, []);
+
+    const handleAnswerSelect = (answerId: number) => {
+        setSelectedAnswer(answerId);
+      };
   return (
     <>
     <p>{props.question}</p>
