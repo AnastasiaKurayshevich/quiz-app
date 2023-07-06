@@ -68,7 +68,7 @@ export const QuestionCard = () => {
         </>
         )) 
         :
-        ( <ResultPage score={score}/>)
+        ( <ResultPage playerName={playerName} score={score}/>)
 }
     
     </div>
