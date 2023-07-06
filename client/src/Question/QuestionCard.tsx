@@ -31,8 +31,13 @@ export const QuestionCard = () => {
         if (selectedAnswer && selectedAnswer.correct){
             setScore((prevScore) => prevScore + 1);
         }
-        setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
-    }
+        const hasNextQuestion = currentQuestionIndex < questions.length - 1;
+        if (!hasNextQuestion){
+            setQuizCompleted(true);
+        } else{
+            setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+        }
+    };
 
     const handleQuizCompletion = () => {
         setQuizCompleted(true);

@@ -10,6 +10,8 @@ type QuestionCardProp = {
 }
 
 
+
+
 export const Question = (props: QuestionCardProp) => {
     const [showAnswers, setShowAnswer] = useState(false);
     const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null); 
@@ -41,14 +43,8 @@ export const Question = (props: QuestionCardProp) => {
         setTimeout(() => {
             setSelectedAnswer(null);
             setShowAnswer(false);
-
-        if (props.hasNextQuestion){
-            props.onAnswerSelect(answerId);
-        } else {
-            props.onQuizCompletion();
-        }
-        
-        }, 2000);
+        props.onAnswerSelect(answerId);
+        }, 1500);
       };
 
       const getAnswerClass = (answer: AnswerProp) => {
