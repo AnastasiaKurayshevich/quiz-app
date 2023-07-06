@@ -11,4 +11,8 @@ public class QuestionRepository {
     public QuestionRepository(QuestionJpaRepository repo) {
         this.repo = repo;
     }
+
+    public Question getQuestionById(long id){
+        return repo.findById(id).orElse(null);
+    }
 }
