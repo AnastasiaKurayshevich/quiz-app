@@ -11,6 +11,7 @@ export const QuestionCard = () => {
             const response = await fetch('http://localhost:3000/api/question/random');
             const data = await response.json();
             setQuestion(data);
+            console.log(data);
           
           } catch (error) {
             console.error('Error fetching questions:', error);

@@ -33,7 +33,15 @@ export const Question = (props: QuestionProp) => {
     <>
     <p>{props.question}</p>
     {showAnswers && (<ul>{props.answers.map(answer => 
-    <li key={answer.id}><button>{answer.answer}</button></li>)}</ul>)}
+    <li key={answer.id}>
+        <button onClick={() => handleAnswerSelect(answer.id)}>{answer.answer}</button>
+        </li>)}</ul>)}
+    {selectedAnswer !== null && (<p>
+              {props.answers.find((answer) => answer.id === selectedAnswer)
+                ?.correct
+                ? 'Correct!'
+                : 'Incorrect!'}
+            </p>)}
     
     </>
   )

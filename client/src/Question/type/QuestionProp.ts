@@ -5,6 +5,6 @@ export type QuestionProp = {
         id: number;
         question_id: number;
         answer: string;
-        isCorrect: boolean; 
+        correct: boolean; 
       }[];
   }
