@@ -18,7 +18,7 @@ public class QuestionService {
     public Question getRandomQuestion(){
         int maxNumber = repo.findAllQuestions().size();
         Random random = new Random();
-        long randomNumber = random.nextLong() % maxNumber + 1;
+        int randomNumber = random.nextInt(maxNumber) + 1;
       return repo.getQuestionById(randomNumber);
 
     }
