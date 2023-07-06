@@ -1,5 +1,7 @@
 package com.quiz_app.demo.model;
 
+import com.quiz_app.demo.model.question.Question;
+import com.quiz_app.demo.model.question.QuestionDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;

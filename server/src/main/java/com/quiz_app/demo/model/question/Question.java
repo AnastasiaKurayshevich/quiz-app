@@ -1,5 +1,6 @@
-package com.quiz_app.demo.model;
+package com.quiz_app.demo.model.question;
 
+import com.quiz_app.demo.model.answer.Answer;
 import jakarta.persistence.*;
 
 import java.util.List;

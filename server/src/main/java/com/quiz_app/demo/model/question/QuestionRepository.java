@@ -1,4 +1,4 @@
-package com.quiz_app.demo.model;
+package com.quiz_app.demo.model.question;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
