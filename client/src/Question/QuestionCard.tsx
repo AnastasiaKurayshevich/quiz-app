@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 type Answer = {
     id: number;
@@ -14,6 +14,7 @@ type Answer = {
   }
   
 export const QuestionCard = () => {
+    const [question, setQuestion] = useState<Question>();
 
    
         const fetchQuestions = async () => {
@@ -27,7 +28,7 @@ export const QuestionCard = () => {
         };
     
         fetchQuestions();
-        
+
 
     
   return (
