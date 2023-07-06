@@ -2,6 +2,7 @@ package com.quiz_app.demo.model;
 
 import com.quiz_app.demo.model.question.Question;
 import com.quiz_app.demo.model.question.QuestionRepository;
+import com.quiz_app.demo.model.result.ResultRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,11 +12,13 @@ import java.util.*;
 public class QuizService {
 
     private final QuestionRepository repo;
+    private final ResultRepository resultRepo;
     private final int LIST_SIZE = 5;
 
     @Autowired
-    public QuizService(QuestionRepository repo) {
+    public QuizService(QuestionRepository repo, ResultRepository resultRepo) {
         this.repo = repo;
+        this.resultRepo = resultRepo;
     }
 
     public List<Question> getListOfRandomQuestions(){
@@ -42,7 +45,5 @@ public class QuizService {
 
     }
 
-    public Question getById(long id){
-        return repo.getQuestionById(id);
-    }
+
 }
