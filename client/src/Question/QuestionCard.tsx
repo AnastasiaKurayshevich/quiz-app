@@ -28,6 +28,10 @@ export const QuestionCard = () => {
         setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
     }
 
+    const handleQuizCompletion = () => {
+        setQuizCompleted(true);
+    }
+
 
     
   return (
