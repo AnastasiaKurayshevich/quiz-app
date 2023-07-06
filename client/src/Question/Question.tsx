@@ -2,8 +2,14 @@ import { useEffect, useState } from 'react'
 import { QuestionProp } from './type/QuestionProp'
 import { AnswerProp } from './type/AnswerProp';
 
+type QuestionCardProp = {
+    question: QuestionProp;
+    onAnswerSelect: (answerId: number) => void;
+    hasNextQuestion: boolean;
+}
 
-export const Question = (props: QuestionProp) => {
+
+export const Question = (props: QuestionCardProp) => {
     const [showAnswers, setShowAnswer] = useState(false);
     const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null); 
 
@@ -33,6 +39,12 @@ export const Question = (props: QuestionProp) => {
         setTimeout(() => {
             setSelectedAnswer(null);
             setShowAnswer(false);
+
+        if (props.hasNextQuestion){
+            props.onAnswerSelect(answerId);
+        } else {
+            //end of quiz here? 
+        }
         
         }, 2000);
       };
@@ -52,15 +64,21 @@ export const Question = (props: QuestionProp) => {
       }
   return (
     <>
-    <p>{props.question}</p>
-    {showAnswers && (<ul>{props.answers.map(answer => 
-    <li key={answer.id}>git
+    <p>{props.question.question}</p>
+    {showAnswers && (
+    <ul>{props.question.answers.map(answer => (
+    <li key={answer.id}>
         <button 
         className={getAnswerClass(answer)}
-        onClick={() => handleAnswerSelect(answer.id)}>{answer.answer}</button>
-        </li>)}</ul>)}
-    {selectedAnswer !== null && (<p>
-              {props.answers.find((answer) => answer.id === selectedAnswer)
+        onClick={() => handleAnswerSelect(answer.id)}>
+            {answer.answer}
+            </button>
+        </li>
+        ))}
+        </ul>)}
+    {selectedAnswer !== null && (
+    <p>
+        {props.question.answers.find((answer) => answer.id === selectedAnswer)
                 ?.correct
                 ? 'Correct!'
                 : 'Incorrect!'}

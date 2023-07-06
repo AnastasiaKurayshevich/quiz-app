@@ -11,7 +11,8 @@ export const QuestionCard = () => {
           try {
             const response = await fetch('http://localhost:3000/api/question/random');
             const data = await response.json();
-            setQuestions(data);
+            setQuestions(data.questions);
+            console.log(data);
           } catch (error) {
             console.error('Error fetching questions:', error);
           }
@@ -35,7 +36,8 @@ export const QuestionCard = () => {
         question={questions[currentQuestionIndex]}
         onAnswerSelect={handleAnswerSelect}
         hasNextQuestion={currentQuestionIndex < questions.length - 1}
-        />)}
+        />
+        )}
     </div>
   )
 }
