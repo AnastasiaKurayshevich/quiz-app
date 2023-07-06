@@ -48,7 +48,7 @@ export const Question = (props: QuestionProp) => {
     <>
     <p>{props.question}</p>
     {showAnswers && (<ul>{props.answers.map(answer => 
-    <li key={answer.id}>
+    <li key={answer.id}>git
         <button 
         className={getAnswerClass(answer)}
         onClick={() => handleAnswerSelect(answer.id)}>{answer.answer}</button>
