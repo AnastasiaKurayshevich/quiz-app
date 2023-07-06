@@ -13,6 +13,7 @@ export const Question = (props: QuestionCardProp) => {
     const [showAnswers, setShowAnswer] = useState(false);
     const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null); 
 
+
     useEffect(() => {
         const waitWithAnswers = setTimeout(() => {
             setShowAnswer(true);
@@ -43,6 +44,7 @@ export const Question = (props: QuestionCardProp) => {
         if (props.hasNextQuestion){
             props.onAnswerSelect(answerId);
         } else {
+            
             alert('Quiz completed!');
         }
         

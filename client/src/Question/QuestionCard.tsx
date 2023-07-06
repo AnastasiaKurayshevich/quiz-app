@@ -6,6 +6,7 @@ export const QuestionCard = () => {
     const [questions, setQuestions] = useState<QuestionProp[]>([]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
     const [quizCompleted, setQuizCompleted] = useState(false);
+    const [score, setScore] = useState<number>(0);
 
     useEffect(() => {
         const fetchQuestions = async () => {
