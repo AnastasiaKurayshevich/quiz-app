@@ -2,6 +2,8 @@ package com.quiz_app.demo.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Question {
    @Id
