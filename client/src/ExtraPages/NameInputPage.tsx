@@ -1,7 +1,18 @@
 import React, { useState } from 'react'
 
-export const NameInputPage = () => {
+type NameInputPageProps = {
+    onStartGame: (name: string) => void;
+  }
+
+export const NameInputPage = (props : NameInputPageProps) => {
     const [name, setName] = useState('');
+    const handleGameStart = () => {
+        if (name.trim()) {
+            props.onStartGame(name);
+
+        }
+    };
+
   return (
     <div>
         <h2>Please enter your name</h2>
@@ -11,7 +22,7 @@ export const NameInputPage = () => {
         value={name}
         onChange={(e) => setName(e.target.value)}
         />
-        <button>Start Game</button>
+        <button onClick={handleGameStart}>Start Game</button>
     </div>
   )
 }
