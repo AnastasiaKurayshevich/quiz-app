@@ -10,7 +10,18 @@ export const Question = (props: QuestionProp) => {
             setShowAnswer(true);
         }, 5000);
 
-        return () => clearTimeout(waitWithAnswers);
+        const showOnClick = () => {
+            setShowAnswer(true);
+        };
+
+        window.addEventListener('click', showOnClick);
+
+        return () => {
+            clearTimeout(waitWithAnswers);
+            window.removeEventListener('click', showOnClick);
+        };
+
+
 
     }, []);
   return (
