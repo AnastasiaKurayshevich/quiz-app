@@ -13,9 +13,9 @@ public class Result {
 
     private String name;
 
-    private String score;
+    private int score;
 
-    public Result(long id, String name, String score) {
+    public Result(long id, String name, int score) {
         this.id = id;
         this.name = name;
         this.score = score;
@@ -41,11 +41,11 @@ public class Result {
         this.name = name;
     }
 
-    public String getScore() {
+    public int getScore() {
         return score;
     }
 
-    public void setScore(String score) {
+    public void setScore(int score) {
         this.score = score;
     }
 }

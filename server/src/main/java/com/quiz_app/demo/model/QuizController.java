@@ -31,6 +31,7 @@ public class QuizController {
 
     @PostMapping("/save_result")
     public ResponseEntity saveResult(@RequestBody Result result){
+        service.saveResultToDataBase(result);
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.set("Access-Control-Allow-Origin", "*");
         return ResponseEntity.accepted().headers(responseHeaders).build();
