@@ -13,8 +13,12 @@ type Answer = {
     answers: Answer[];
   }
 
-export const Question = () => {
+export const Question = (props: Question) => {
   return (
-    <div>Question</div>
+    <>
+    <p>{props.question}</p>
+    <p>{props.answers.map(answer => 
+    <li key={answer.id}>{answer.answer}</li>)}</p>
+    </>
   )
 }
