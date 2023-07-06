@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { AllResultsPage } from "./AllResultsPage";
 
 type ResultPageProps = { 
     playerName: string;
@@ -6,6 +7,8 @@ type ResultPageProps = {
 }
 export const ResultPage = (props: ResultPageProps) => {
   const [submissionStatus, setSubmissionStatus] = useState<string>('');
+  const [showAllResults, setShowAllResults] = useState(false);
+
   useEffect(() => {
     const submitResult = async () => {
       try {
@@ -30,12 +33,18 @@ export const ResultPage = (props: ResultPageProps) => {
 
     submitResult();
   }, [props.playerName, props.score]);
+
+  const handleShowAllResults = () => {
+    setShowAllResults(true);
+  };
   return (
     <div>
         <h2>Congrats!</h2>
         <p>{props.playerName}, you have completed the Quiz</p>
         <p>Your final score is {props.score} / 5 </p>
         {submissionStatus && <p>Submission status: {submissionStatus}</p>}
+        <button onClick={handleShowAllResults}>Show All Results</button>
+      {showAllResults && <AllResultsPage />}
     </div>
   )
 }
