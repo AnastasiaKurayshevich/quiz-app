@@ -20,6 +20,6 @@ public class ResultRepository {
     }
 
     public List<Result> getResults(){
-        return repo.findAllResults();
+        return repo.findAll();
     }
 }

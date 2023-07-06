@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface ResultJpaRepository extends CrudRepository<Result, Long> {
-    List<Result> findAllResults();
+    List<Result> findAll();
 }
