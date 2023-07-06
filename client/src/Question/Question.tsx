@@ -50,7 +50,7 @@ export const Question = (props: QuestionProp) => {
     {showAnswers && (<ul>{props.answers.map(answer => 
     <li key={answer.id}>
         <button 
-        
+        className={getAnswerClass(answer)}
         onClick={() => handleAnswerSelect(answer.id)}>{answer.answer}</button>
         </li>)}</ul>)}
     {selectedAnswer !== null && (<p>
