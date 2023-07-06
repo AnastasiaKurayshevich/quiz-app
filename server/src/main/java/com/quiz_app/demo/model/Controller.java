@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "http://127.0.0.1:5173/", allowedHeaders = "*")
 public class Controller {
 
-    private final Service service;
+    private final QuestionService service;
 
     @Autowired
-    public Controller(Service service) {
+    public Controller(QuestionService service) {
         this.service = service;
     }
 
