@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Question } from './Question';
 
 type Answer = {
     id: number;
