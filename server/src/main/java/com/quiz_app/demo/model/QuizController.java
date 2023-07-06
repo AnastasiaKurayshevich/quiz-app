@@ -36,8 +36,8 @@ public class QuizController {
 
     @GetMapping("/results")
     public ResponseEntity<List<Result>> getAllResults(){
-
-        return null;
+        List<Result> resultList = service.getAllResults();
+        return ResponseEntity.ok().body(resultList);
 
     }
 

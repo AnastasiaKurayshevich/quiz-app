@@ -42,6 +42,10 @@ public class QuizService {
         resultRepo.safeToDb(result);
     }
 
+    public List<Result> getAllResults(){
+        return resultRepo.getResults();
+    }
+
     private Question getRandomQuestion(){
         int maxNumber = repo.findAllQuestions().size();
         Random random = new Random();
