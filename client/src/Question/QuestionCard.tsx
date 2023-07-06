@@ -14,6 +14,21 @@ type Answer = {
   }
   
 export const QuestionCard = () => {
+
+   
+        const fetchQuestions = async () => {
+          try {
+            const response = await fetch('/api/quiz/questions');
+            const data = await response.json();
+          
+          } catch (error) {
+            console.error('Error fetching questions:', error);
+          }
+        };
+    
+        fetchQuestions();
+        
+
     
   return (
     <div>QuestionCard</div>
