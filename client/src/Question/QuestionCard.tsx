@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Question } from './Question';
 import { QuestionProp } from './type/QuestionProp';
+import { ResultPage } from '../FinalPage/ResultPage';
   
 export const QuestionCard = () => {
     const [questions, setQuestions] = useState<QuestionProp[]>([]);
@@ -36,14 +37,18 @@ export const QuestionCard = () => {
     
   return (
     <div>
-        {questions.length > 0 && ( 
+        {!quizCompleted ? 
+        (questions.length > 0 && ( 
         <Question 
         question={questions[currentQuestionIndex]}
         onAnswerSelect={handleAnswerSelect}
         hasNextQuestion={currentQuestionIndex < questions.length - 1}
         onQuizCompletion={handleQuizCompletion} 
         />
-        )}
+        )) 
+        :
+        ( <ResultPage/>)
+}
     </div>
   )
 }

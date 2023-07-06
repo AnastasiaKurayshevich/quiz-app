@@ -6,7 +6,7 @@ type QuestionCardProp = {
     question: QuestionProp;
     onAnswerSelect: (answerId: number) => void;
     hasNextQuestion: boolean;
-    onQuizCompletion: (completed: boolean) => void;
+    onQuizCompletion: () => void;
 }
 
 
@@ -33,7 +33,7 @@ export const Question = (props: QuestionCardProp) => {
 
 
 
-    }, []);
+    }, [props.question]);
 
     const handleAnswerSelect = (answerId: number) => {
         setSelectedAnswer(answerId);
@@ -45,8 +45,7 @@ export const Question = (props: QuestionCardProp) => {
         if (props.hasNextQuestion){
             props.onAnswerSelect(answerId);
         } else {
-            
-            alert('Quiz completed!');
+            props.onQuizCompletion();
         }
         
         }, 2000);
