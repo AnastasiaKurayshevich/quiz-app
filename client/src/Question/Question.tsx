@@ -3,7 +3,8 @@ import { QuestionProp } from './type/QuestionProp'
 
 
 export const Question = (props: QuestionProp) => {
-    const [showAnswers, setShowAnswer] = useState(false); 
+    const [showAnswers, setShowAnswer] = useState(false);
+    const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null); 
 
     useEffect(() => {
         const waitWithAnswers = setTimeout(() => {
@@ -29,6 +30,7 @@ export const Question = (props: QuestionProp) => {
     <p>{props.question}</p>
     {showAnswers && (<ul>{props.answers.map(answer => 
     <li key={answer.id}><button>{answer.answer}</button></li>)}</ul>)}
+    
     </>
   )
 }
