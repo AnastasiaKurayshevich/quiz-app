@@ -12,4 +12,8 @@ public class ResultRepository {
     public ResultRepository(ResultJpaRepository repo) {
         this.repo = repo;
     }
+
+    public void safeToDb (Result result){
+        repo.save(result);
+    }
 }
