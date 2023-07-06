@@ -7,13 +7,13 @@ type Answer = {
     isCorrect: boolean; 
   }
   
-  type Question = {
+  type QuestionProp = {
     id: number;
     question: string;
     answers: Answer[];
   }
 
-export const Question = (props: Question) => {
+export const Question = (props: QuestionProp) => {
   return (
     <>
     <p>{props.question}</p>

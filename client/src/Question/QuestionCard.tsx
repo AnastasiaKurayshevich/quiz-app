@@ -15,7 +15,7 @@ type Answer = {
   }
   
 export const QuestionCard = () => {
-    const [question, setQuestion] = useState<Question>();
+    const [currentQuestion, setQuestion] = useState<Question>();
 
     useEffect(() => {
         const fetchQuestions = async () => {
@@ -37,7 +37,7 @@ export const QuestionCard = () => {
   return (
     <div>
         <h4>Here is test question:</h4>
-        <Question />
+        {currentQuestion && <Question {...currentQuestion}/>}
     </div>
   )
 }
