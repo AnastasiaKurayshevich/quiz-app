@@ -12,7 +12,6 @@ export const QuestionCard = (props: QuestionCardProp) => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
     const [quizCompleted, setQuizCompleted] = useState(false);
     const [score, setScore] = useState<number>(0);
-    // const [playerName, setPlayerName] = useState('');
 
     useEffect(() => {
         const fetchQuestions = async () => {
@@ -47,15 +46,6 @@ export const QuestionCard = (props: QuestionCardProp) => {
     const handleQuizCompletion = () => {
         setQuizCompleted(true);
     }
-
-    // const handleGameStart = (name: string) => {
-    //     setPlayerName(name);
-    //     setCurrentQuestionIndex(0);
-    //     setScore(0);
-    //     setQuizCompleted(false);
-    // }
-
-
     
   return (
     <div>
