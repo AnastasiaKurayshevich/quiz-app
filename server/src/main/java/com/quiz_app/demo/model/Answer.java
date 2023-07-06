@@ -16,4 +16,36 @@ public class Answer {
     @Column(nullable = false)
     private boolean isCorrect;
 
+    public Answer(long id, String answer, boolean isCorrect) {
+        this.id = id;
+        this.answer = answer;
+        this.isCorrect = isCorrect;
+    }
+
+    public Answer(){
+
+    }
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
+
+    public boolean isCorrect() {
+        return isCorrect;
+    }
+
+    public void setCorrect(boolean correct) {
+        isCorrect = correct;
+    }
 }
