@@ -21,6 +21,7 @@ export const QuestionCard = () => {
           try {
             const response = await fetch('/api/quiz/questions');
             const data = await response.json();
+            setQuestion(data);
           
           } catch (error) {
             console.error('Error fetching questions:', error);
@@ -33,6 +34,9 @@ export const QuestionCard = () => {
 
     
   return (
-    <div>QuestionCard</div>
+    <div>
+        <h4>Here is test question:</h4>
+        <Question />
+    </div>
   )
 }
