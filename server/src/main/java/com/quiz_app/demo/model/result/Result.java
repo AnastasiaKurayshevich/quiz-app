@@ -9,13 +9,13 @@ import jakarta.persistence.Id;
 public class Result {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private long id;
 
     private String name;
 
     private String score;
 
-    public Result(String id, String name, String score) {
+    public Result(long id, String name, String score) {
         this.id = id;
         this.name = name;
         this.score = score;
@@ -25,11 +25,11 @@ public class Result {
 
      }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 

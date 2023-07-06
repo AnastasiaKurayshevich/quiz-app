@@ -14,12 +14,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/question")
 @CrossOrigin(origins = "http://127.0.0.1:5173/", allowedHeaders = "*")
-public class Controller {
+public class QuizController {
 
     private final QuizService service;
 
     @Autowired
-    public Controller(QuizService service) {
+    public QuizController(QuizService service) {
         this.service = service;
     }
 
