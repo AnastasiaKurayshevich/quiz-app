@@ -22,10 +22,10 @@ public class Controller {
     }
 
     @GetMapping("/random")
-    public ResponseEntity<List<Question>> getRandomQuestionFromDb(){
+    public ResponseEntity<QuestionDTO> getRandomQuestionFromDb(){
         List<Question> questionList = service.getListOfRandomQuestions();
-
-        return ResponseEntity.ok(questionList);
+        QuestionDTO response = new QuestionDTO(questionList);
+        return ResponseEntity.ok(response);
     }
 
 

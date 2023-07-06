@@ -32,7 +32,7 @@ public class QuestionService {
         return questionList;
     }
 
-    public Question getRandomQuestion(){
+    private Question getRandomQuestion(){
         int maxNumber = repo.findAllQuestions().size();
         Random random = new Random();
         int randomNumber = random.nextInt(maxNumber) + 1;
