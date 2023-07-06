@@ -44,17 +44,20 @@ export const QuestionCard = () => {
     <div>
         {!quizCompleted ? 
         (questions.length > 0 && ( 
-        <Question 
+        
+        <><Question 
         question={questions[currentQuestionIndex]}
         onAnswerSelect={handleAnswerSelect}
         hasNextQuestion={currentQuestionIndex < questions.length - 1}
         onQuizCompletion={handleQuizCompletion} 
         />
+        <p>Score:{score}/5</p>
+        </>
         )) 
         :
-        ( <ResultPage/>)
+        ( <ResultPage score={score}/>)
 }
-    <p>Score:{score}/5</p>
+    
     </div>
   )
 }
