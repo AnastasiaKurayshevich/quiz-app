@@ -4,6 +4,7 @@ import com.quiz_app.demo.model.question.Question;
 import com.quiz_app.demo.model.question.QuestionDTO;
 import com.quiz_app.demo.model.result.Result;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,8 +31,9 @@ public class QuizController {
 
     @PostMapping("/save_result")
     public ResponseEntity saveResult(@RequestBody Result result){
-        service.saveResultToDataBase(result);
-        return ResponseEntity.accepted().build();
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.set("Access-Control-Allow-Origin", "*");
+        return ResponseEntity.accepted().headers(responseHeaders).build();
     }
 
     @GetMapping("/results")
@@ -40,6 +42,5 @@ public class QuizController {
         return ResponseEntity.ok().body(resultList);
 
     }
-
 
 }
