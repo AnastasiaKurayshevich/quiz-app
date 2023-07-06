@@ -3,7 +3,8 @@ import { Question } from './Question';
 import { QuestionProp } from './type/QuestionProp';
   
 export const QuestionCard = () => {
-    const [currentQuestion, setQuestion] = useState<QuestionProp>();
+    const [questions, setQuestions] = useState<QuestionProp[]>([]);
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
 
     useEffect(() => {
         const fetchQuestions = async () => {
