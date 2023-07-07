@@ -44,7 +44,8 @@ public class QuizController {
 
     @DeleteMapping("/results/{id}")
     public ResponseEntity deleteResult(@PathVariable long id){
-        return null;
+        service.deleteResultById(id);
+        return ResponseEntity.noContent().build();
     }
 
 }

@@ -45,6 +45,9 @@ public class QuizService {
     public List<Result> getAllResults(){
         return resultRepo.getResults();
     }
+    public void deleteResultById(long id){
+        resultRepo.removeResult(id);
+    }
 
     private Question getRandomQuestion(){
         int maxNumber = repo.findAllQuestions().size();
