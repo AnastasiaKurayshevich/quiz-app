@@ -21,6 +21,17 @@ export const AllResultsPage = () => {
     
         fetchResults();
       }, []);
+
+      const handleDeleteresult = async(resultId: number) => {
+        try{
+            await fetch('http://localhost:3000/api/question/results/${resultId}', {
+                method: 'DELETE',
+            });
+            setResults((prev) => prev.filter((result) => result.id !== resultId));
+        } catch (error) {
+            console.error('Error deleting result:', error);
+          }
+      };
   return (
     <div>
         <h2>All Results</h2>
