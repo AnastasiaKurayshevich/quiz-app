@@ -24,7 +24,7 @@ export const AllResultsPage = () => {
 
       const handleDeleteResult = async(resultId: number) => {
         try{
-            await fetch('http://localhost:3000/api/question/results/${resultId}', {
+            await fetch(`http://localhost:3000/api/question/results/${resultId}`, {
                 method: 'DELETE',
             });
             setResults((prev) => prev.filter((result) => result.id !== resultId));
