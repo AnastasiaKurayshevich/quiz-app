@@ -22,4 +22,8 @@ public class ResultRepository {
     public List<Result> getResults(){
         return repo.findAll();
     }
+
+    public void removeResult(long id){
+        repo.deleteById(id);
+    }
 }
