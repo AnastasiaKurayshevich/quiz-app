@@ -48,10 +48,9 @@ export const AllResultsPage = () => {
           >{result.name} - {result.score}
          
           {selectedResult === result.id.toString() && <button
-              className="delete-button"
+              className='delete-button'
               onClick={() => handleDeleteResult(result.id)}
-            > Delete
-            </button>}
+            ><span className="delete-icon">&times;</span></button>}
              </li>
         ))}
       </ul>

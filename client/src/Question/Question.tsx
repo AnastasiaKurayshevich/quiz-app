@@ -62,12 +62,12 @@ export const Question = (props: QuestionArrayProp) => {
       }
   return (
     <>
-    <p>{props.question.question}</p>
+    <p className='question'>{props.question.question}</p>
     {showAnswers && (
     <ul>{props.question.answers.map(answer => (
     <li key={answer.id}>
         <button 
-        className={getAnswerClass(answer)}
+        className={'answers ' + getAnswerClass(answer)}
         onClick={() => handleAnswerSelect(answer.id)}>
             {answer.answer}
             </button>

@@ -60,7 +60,7 @@ export const QuestionCard = (props: QuestionCardProp) => {
         hasNextQuestion={currentQuestionIndex < questions.length - 1}
         onQuizCompletion={handleQuizCompletion} 
         />
-        <p>Score:{score}/5</p>
+        <p className='score'>Score: {score} / 10 </p>
         </>
         )) 
         :

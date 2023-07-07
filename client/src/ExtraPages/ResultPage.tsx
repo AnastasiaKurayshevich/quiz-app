@@ -43,8 +43,8 @@ export const ResultPage = (props: ResultPageProps) => {
     <div>
         <h2>Congrats!</h2>
         <p>{props.playerName}, you have completed the Quiz</p>
-        <p>Your final score is {props.score} / 5 </p>
-        <button onClick={handleToggleResults}>{showAllResults ? 'Hide Results' : 'Show All Results'}</button>
+        <p className="final-score">Your final score is {props.score} / 10 </p>
+        <button className="result-button" onClick={handleToggleResults}>{showAllResults ? 'Hide Results' : 'Show All Results'}</button>
       {showAllResults && <AllResultsPage />}
     </div>
   )

@@ -15,14 +15,14 @@ export const NameInputPage = (props : NameInputPageProps) => {
 
   return (
     <div>
-        <h2>Please enter your name</h2>
-        <input
+        <h2 className='input__name'>Please enter your name</h2>
+        <input className='input'
         type='text'
         placeholder='Your name..'
         value={name}
         onChange={(e) => setName(e.target.value)}
         />
-        <button onClick={handleGameStart}>Start Game</button>
+        <button className='input_button' onClick={handleGameStart}>Start Game</button>
     </div>
   )
 }
