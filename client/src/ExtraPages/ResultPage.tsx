@@ -36,15 +36,15 @@ export const ResultPage = (props: ResultPageProps) => {
     }
   }, [submissionStatus]);
 
-  const handleShowAllResults = () => {
-    setShowAllResults(true);
+  const handleToggleResults = () => {
+    setShowAllResults((prevShowAllResults) => !prevShowAllResults);
   };
   return (
     <div>
         <h2>Congrats!</h2>
         <p>{props.playerName}, you have completed the Quiz</p>
         <p>Your final score is {props.score} / 5 </p>
-        <button onClick={handleShowAllResults}>Show All Results</button>
+        <button onClick={handleToggleResults}>{showAllResults ? 'Hide Results' : 'Show All Results'}</button>
       {showAllResults && <AllResultsPage />}
     </div>
   )
