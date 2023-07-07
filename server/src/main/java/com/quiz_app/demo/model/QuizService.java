@@ -14,7 +14,7 @@ public class QuizService {
 
     private final QuestionRepository repo;
     private final ResultRepository resultRepo;
-    private final int LIST_SIZE = 5;
+    private final int LIST_SIZE = 10;
 
     @Autowired
     public QuizService(QuestionRepository repo, ResultRepository resultRepo) {
