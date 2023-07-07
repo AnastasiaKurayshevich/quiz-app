@@ -31,8 +31,10 @@ export const ResultPage = (props: ResultPageProps) => {
       }
     };
 
-    submitResult();
-  }, [props.playerName, props.score]);
+    if (submissionStatus === '') {
+      submitResult();
+    }
+  }, [submissionStatus]);
 
   const handleShowAllResults = () => {
     setShowAllResults(true);
@@ -42,7 +44,6 @@ export const ResultPage = (props: ResultPageProps) => {
         <h2>Congrats!</h2>
         <p>{props.playerName}, you have completed the Quiz</p>
         <p>Your final score is {props.score} / 5 </p>
-        {submissionStatus && <p>Submission status: {submissionStatus}</p>}
         <button onClick={handleShowAllResults}>Show All Results</button>
       {showAllResults && <AllResultsPage />}
     </div>
