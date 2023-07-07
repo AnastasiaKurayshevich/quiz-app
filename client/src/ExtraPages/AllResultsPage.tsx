@@ -11,7 +11,7 @@ export const AllResultsPage = () => {
     useEffect(() => {
         const fetchResults = async () => {
           try {
-            const response = await fetch('http://localhost:3000/api/results');
+            const response = await fetch('http://localhost:3000/api/question/results');
             const data = await response.json();
             setResults(data);
           } catch (error) {

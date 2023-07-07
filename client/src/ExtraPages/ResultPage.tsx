@@ -12,7 +12,7 @@ export const ResultPage = (props: ResultPageProps) => {
   useEffect(() => {
     const submitResult = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/save_result', {
+        const response = await fetch('http://localhost:3000/api/question/save_result', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
