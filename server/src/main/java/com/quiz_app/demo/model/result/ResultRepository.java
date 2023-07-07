@@ -3,7 +3,9 @@ package com.quiz_app.demo.model.result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 public class ResultRepository {
@@ -20,7 +22,9 @@ public class ResultRepository {
     }
 
     public List<Result> getResults(){
-        return repo.findAll();
+        return repo.findAll().stream()
+                .sorted(Comparator.comparingInt(Result::getScore).reversed())
+                .collect(Collectors.toList());
     }
 
     public void removeResult(long id){
