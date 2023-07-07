@@ -22,7 +22,7 @@ export const AllResultsPage = () => {
         fetchResults();
       }, []);
 
-      const handleDeleteresult = async(resultId: number) => {
+      const handleDeleteResult = async(resultId: number) => {
         try{
             await fetch('http://localhost:3000/api/question/results/${resultId}', {
                 method: 'DELETE',
@@ -37,7 +37,13 @@ export const AllResultsPage = () => {
         <h2>All Results</h2>
         <ul>
         {results.map((result) => (
-          <li key={result.id}>{result.name} - {result.score}</li>
+          <li key={result.id}>{result.name} - {result.score}
+          <button
+              className="delete-button"
+              onClick={() => handleDeleteResult(result.id)}
+            >
+              Delete
+            </button></li>
         ))}
       </ul>
 
