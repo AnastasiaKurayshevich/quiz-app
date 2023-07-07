@@ -8,6 +8,7 @@ type Result =  {
 
 export const AllResultsPage = () => {
     const [results, setResults] = useState<Result[]>([]);
+    const [selectedResult, setSelectedResult] = useState<string>('');
     useEffect(() => {
         const fetchResults = async () => {
           try {
@@ -32,18 +33,26 @@ export const AllResultsPage = () => {
             console.error('Error deleting result:', error);
           }
       };
+
+      const handleSelect = (id: string) => {
+        setSelectedResult(id);
+    };
   return (
     <div>
         <h2>All Results</h2>
         <ul>
         {results.map((result) => (
-          <li key={result.id}>{result.name} - {result.score}
-          <button
+          <li key={result.id}
+          onMouseEnter={() => handleSelect(result.id.toString())}
+          onMouseLeave={() => handleSelect('')}
+          >{result.name} - {result.score}
+         
+          {selectedResult === result.id.toString() && <button
               className="delete-button"
               onClick={() => handleDeleteResult(result.id)}
-            >
-              Delete
-            </button></li>
+            > Delete
+            </button>}
+             </li>
         ))}
       </ul>
 
