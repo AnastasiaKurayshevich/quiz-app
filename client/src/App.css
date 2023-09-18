@@ -5,6 +5,13 @@
   text-align: center;
 }
 
+.card {
+  border: 2px red solid; 
+  background-color: aquamarine;
+  width: 400px;
+  height: 600px;
+}
+
 .input__name {
 margin-top: -70px;
 
