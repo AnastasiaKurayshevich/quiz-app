@@ -1,12 +1,13 @@
-# quiz-app
-Quiz Game 
 
-## Full Stack Quiz Game project. 
+## QuizMaster 
 
 
-Welcome to my project. 
-The idea was to create little fun quiz game to advance my knowladge of React library and TypeScript, DataBases and Java.  
-The game will be one-page application that changes the dispaly state of components based on either User's input or time limit. 
+Welcome to QuizMaster, a full-stack quiz game developed during the School of Applied Technology (SALT) Hack Day Challenge. In just one day, I created a fun and educational quiz game to enhance my knowledge of React, TypeScript, databases, and Java.
+
+### Application's layout
+
+![Untitled 2](https://github.com/AnastasiaKurayshevich/quiz-app/assets/125829513/54bbf6d1-a41e-455f-9821-9c8915f53f25)
+
 
 
 ### Technical specification:
@@ -17,48 +18,30 @@ The game will be one-page application that changes the dispaly state of componen
 - Frontend: Vite and React, TypeScript  
 - Documentation: OpenAPI
 
-### Project goals: 
+### Overview
+The primary goal of QuizMaster is to provide users with an engaging quiz experience. Key features include:
 
-Create a minimal functionality where User can start the game, recieve the question with answers, interact with the game by answering the questions, and recieve the final score of how many questions were answered correctly.
+- Starting the game
+- Receiving questions with answer choices
+- Interacting with the game by answering questions
+- Receiving a final score based on correct answers
 
-### Possible extra features (to be implemented in the future):
+I am proud to announce that all project goals have been achieved. In addition to the MVP, I've also implemented the following features:
 
-- Prevent dublicating the questions
-- Create a database with names and scores of Users (post results to the database)
-- Add categories to the questions, filter them according to their category
-- Add time restrictions for answering the questions
-- Include unused time in score calculation process 
+- **Preventing Duplicate Questions:** No question will appear twice during a single game session.
+- **User Database:** I've created a database to store user names and their scores, allowing to track and display leaderboards.
 
+### Getting Started
+To get started with QuizMaster Pro, follow these steps:
 
-### Initial design wireframe: 
+- Clone the repository to your local machine `git clone` `git@github.com:AnastasiaKurayshevich/quiz-app.git`
+- Set up the backend development environment, including installing dependencies `mvn clean install`
+- Set up your Docker container `docker compose up`
+- Set up the frontend development environment, including installing dependencies `npm install`
+- Run the backend Java Spring application `mvn start` and the frontend React application `npm run dev`
+- Start the quiz game and enjoy!
 
+#
 
-![Image](https://user-images.githubusercontent.com/125829513/247189215-898f59a2-ec6e-4e39-99f6-20fe3d0d7e98.png)
+Thank you for visiting my QuizMaster's repository. Feel free to give me your feedback!
 
-Please ignore the style and colors of the design, I created this wireframe to navigate through application's architecture. 
-
-#### First 4 frames represent the things that will be shown before the game starts: 
-
-1. Game name, some information about the game itself and game's creators.
-2. User will be asked to input their name in order to save their result.
-3. User will be presented with the game rules, there is no time limit for reading the rules, the next segment will appear once User presses continue button.
-4. Finial step before the game starts.
-
-#### Once the game starts (frames 5 and 6): 
-
-1. User will be presented with the random question for 5 seconds (or less if User chooses to tap the screen to start answering the question). There are no extra points for finishing reading the question quicker that 5 seconds.
-2. User will have 30 seconds to choose 1 of 3 answers and submit them. Quicker answers are encouraged - for each "unused" second User gets 0,1 extra points. So is if took 5 secons for the User to answer correctly and submit the answer, and there was 25 seconds left on the clock, User get 2,5 extra points for this question (25s * 0,1 = 2,5 points). Read more on point calculation in Game rules section.
-3. This proccess will repeat until the User answers all questions (10 in total).
-
-#### After the game ends (frames 7 and 8):
-
-1. User is presented with final score and score calculations.
-2. User's score is posted to the server, and list of 5 highest scores is presented (fetched from the server).
-
-
-### Game rules: 
-
-- User is presented with the question for 5 seconds (User can choose to preside quicker by tapping the screen).
-- User have max 30 seconds to answer the question.
-After that the User is shown 3 options to choose an answer from, this last not longer that 30 second. User have to make a choose or the game will continue and the question will be marked as answered wrongly. For each write answer User gets 5 points. For each unused second User get extra 0.1 point. >>> More is comming here
-- have to finish the game rules
