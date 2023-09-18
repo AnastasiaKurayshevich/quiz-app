@@ -15,6 +15,9 @@ export const NameInputPage = (props : NameInputPageProps) => {
 
   return (
     <div>
+        <h1>Welcome to Quiz Game!</h1>
+        <h3>You will be given 10 questions to answer, each has 3 options to chose from</h3>
+        <h3>Good luck!</h3>
         <h2 className='input__name'>Please enter your name</h2>
         <input className='input'
         type='text'

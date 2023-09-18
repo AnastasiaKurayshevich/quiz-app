@@ -63,7 +63,7 @@ export const Question = (props: QuestionArrayProp) => {
       }
   return (
     <>
-    <p className='question'>{props.question.question}</p>
+    <p className='question'>{props.index+1}. {props.question.question}</p>
     {showAnswers && (
     <ul>{props.question.answers.map(answer => (
     <li key={answer.id}>
