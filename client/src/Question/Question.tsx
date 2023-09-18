@@ -7,6 +7,7 @@ type QuestionArrayProp = {
     onAnswerSelect: (answerId: number) => void;
     hasNextQuestion: boolean;
     onQuizCompletion: () => void;
+    index: number; 
 }
 
 
