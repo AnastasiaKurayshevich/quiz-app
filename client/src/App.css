@@ -2,13 +2,17 @@
   max-width: 320px;
   margin: 0 auto;
   text-align: center;
+ 
 }
 
 .card {
-  border: 2px blue solid; 
-  background-color: antiquewhite;
-  width: 90%;
+  border: 2px #F8F0E5 solid; 
+  background-color: #F8F0E5;
+  width: 100%;
   height: 600px;
+  position: relative;
+  min-width: 320px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .input__name {
@@ -21,10 +25,10 @@ margin-top: -70px;
   width: 80%;
   border-radius: 10px;
   height: 25px;
-  border: 2px solid blueviolet;
+  border: 2px solid #0F2C59;
 }
 .input_button:hover, .answers:hover, .result-button:hover {
-  background-color: blueviolet;
+  background-color: #0F2C59;;
   color: white;
 }
 
@@ -44,7 +48,7 @@ ul {
   width: 250px;
   border-radius: 10px;
   height: 30px;
-  border: 2px solid blueviolet;
+  border: 2px solid #0F2C59;;
   padding-top: 0px;
   text-align: center;
 }
@@ -57,25 +61,50 @@ ul {
 }
 
 .question {
+  width: 320px;
   font-size: 25px;
   font-weight: 700;
+  margin: 70px auto 100px; 
 }
 
 .score {
-  background-color: blueviolet;
+  background-color: #0F2C59;;
   color: white;
   font-weight: 600;
   padding: 10px;
   width: 50%;
-  margin: 60px auto 0;
   border-radius: 30px;
-
-
+  position: absolute;
+  bottom: 30px;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
 }
 
+.congrats {
+  margin-top: 100px;
+}
+
+.input__name__div{
+margin-top: 150px;
+}
+
+.input__welcome {
+  margin: 50px 10px 0;
+  color: #0F2C59;;
+}
+
+.input__text{
+  margin: 30px 10px;
+}
 .final-score {
   font-weight: 800;
   margin: 30px;
+}
+
+.ifCorrect {
+  font-weight: bold;
 }
 
 @media screen and (min-device-width: 480px) {
@@ -85,8 +114,6 @@ ul {
   }
 
   .card {
-    border: 2px red solid; 
-    background-color: aquamarine;
     width: 400px;
     height: 600px;
   }

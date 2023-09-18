@@ -76,7 +76,7 @@ export const Question = (props: QuestionArrayProp) => {
         ))}
         </ul>)}
     {selectedAnswer !== null && (
-    <p>
+    <p className='ifCorrect'>
         {props.question.answers.find((answer) => answer.id === selectedAnswer)
                 ?.correct
                 ? 'Correct!'
