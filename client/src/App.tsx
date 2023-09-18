@@ -16,11 +16,13 @@ function App() {
 
   return (
     <>
+    <div className='card'>
     {!gameStarted ? (
       <NameInputPage onStartGame={handleGameStart}/>
     ) : (
     <QuestionCard  playerName = {playerName}/>
     )}
+    </div>
     </>
   )
 }
